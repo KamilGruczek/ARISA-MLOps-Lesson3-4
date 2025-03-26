@@ -25,7 +25,6 @@ jobs:
       - name: Create kaggle directory
         env: 
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
-          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
         run: |
           mkdir -p $HOME/.config
           mkdir -p $HOME/.config/kaggle
@@ -35,7 +34,6 @@ jobs:
         run: make preprocess
         env: 
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
-          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
       - name: Upload preprocessed data
         uses: actions/upload-artifact@v4
         with:
